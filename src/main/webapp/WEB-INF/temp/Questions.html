@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Webtester</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/webtester.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Webtester</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">Tests</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Profile
+                    <span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Sign out</a></li>
+                    </ul></li>
+
+            </ul>
+
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control"
+                       placeholder="Search... (inactive)">
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li><a href="#">Tests</a></li>
+                <li><a href="#">Statistics</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Create Test</a></li>
+                <li class="active"><a href="">Test Management</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">User Management</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Questions Management</h1>
+
+            <h2 class="sub-header">[Test name]</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Question</th>
+                        <th>Edit</th>
+                        <th>Activate</th>
+                        <th>Delete</th>
+                        <th>Answers</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>Question part</td>
+                                <td><button type="button" class="btn btn-primary btn-xs">Edit</button></td>
+                                <td><button type="button" class="btn btn-success btn-xs">Activate</button></td>
+                                <td><button type="button" class="btn btn-danger btn-xs">Delete</button></td>
+                                <td><button type="button" class="btn btn-primary btn-xs">Manage</button></td>
+                            </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-block">Add new Question</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!--<script src="../../assets/js/docs.min.js"></script>-->
+</body>
+</html>

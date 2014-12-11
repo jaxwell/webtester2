@@ -1,0 +1,20 @@
+.style1 .main {
+	text-align: center;
+	margin: 0 auto;
+	width: 1024px;
+}
+
+.style1 #loginForm table {
+	width: 300px;
+	margin: 0 auto;
+}
+
+.style1 #loginForm table td {
+	text-align: left;
+}
+
+.style1 .errors {
+	color:red;
+	text-align: center;
+	font-weight: bold;
+}

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/webtester</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">webtester</property>
+        <property name="hibernate.connection.password">1111</property>
+
+        <mapping class="net.bykov.entities.Answer"/>
+        <mapping class="net.bykov.entities.Question"/>
+        <mapping class="net.bykov.entities.Result"/>
+        <mapping class="net.bykov.entities.Role"/>
+        <mapping class="net.bykov.entities.Test"/>
+        <mapping class="net.bykov.entities.User"/>
+        <mapping class="net.bykov.entities.UserRegistration"/>
+        <mapping class="net.bykov.entities.UserRole"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>
