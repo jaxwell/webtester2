@@ -20,13 +20,13 @@ public class TutorController extends AbstractTutorController {
         return "tutor/home";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    @RequestMapping(value = "/createTest", method = RequestMethod.GET)
     public String createTest(Model model) {
 
-        return "tutor/create";
+        return "tutor/createTest";
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/createTest", method = RequestMethod.POST)
     public String completeCreateTest(@ModelAttribute("createTest")CreateTestForm createTestForm, BindingResult result, Model model) {
 
         return "tutor/tests";

@@ -31,7 +31,7 @@
         <form:form method="post" action="${context}/signup" commandName="signupForm" class="form-horizontal" role="form">
         <%--<form role="form" class="form-horizontal">--%>
             <div class="form-group required">
-                <div class="alert alert-danger" role="alert"><form:errors path="*"/></div>
+                <div class="alert alert-danger hidden" role="alert"><form:errors path="*" cssClass="registersErrors"/></div>
                 <label class="col-sm-2 control-label" for="Login">Enter
                     Login<sup>*</sup>
                 </label>

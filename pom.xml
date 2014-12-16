@@ -9,6 +9,7 @@
 
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
+        <spring.security.version>3.2.5.RELEASE</spring.security.version>
     </properties>
 
     <dependencies>
@@ -62,11 +63,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- PostgreSQL JDBC Driver -->
         <dependency>
             <groupId>postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.1-901-1.jdbc4</version>
         </dependency>
+        <!-- End PostgreSQL JDBC Driver -->
 
         <dependency>
             <groupId>commons-lang</groupId>
@@ -98,6 +101,33 @@
             <artifactId>spring-orm</artifactId>
             <version>3.1.2.RELEASE</version>
         </dependency>
+
+        <!-- Sitemesh -->
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>2.4.2</version>
+        </dependency>
+        <!-- End Sitemesh -->
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <!-- End Spring Security -->
+
     </dependencies>
 
     <build>

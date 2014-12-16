@@ -5,17 +5,22 @@
 
 	<display-name>Webtester</display-name>
 
+	<!-- Context Param Group -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
+	<!-- End Context Param Group -->
 
+	<!-- Servlets group -->
     <servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
 	</servlet>
+	<!-- End Servlets group -->
 
+	<!-- Filters group -->
 	<filter>
 		<filter-name>charsetEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -30,6 +35,25 @@
 		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
 	</filter>
 
+	<!-- Sitemesh -->
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+
+	<!-- Spring Security -->
+	<filter>
+		<filter-name>RequestContextFilter</filter-name>
+		<filter-class>org.springframework.web.filter.RequestContextFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<!-- End Filters group -->
+
+
+	<!-- Filter mappings group -->
 	<filter-mapping>
 		<filter-name>charsetEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -40,11 +64,30 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+	<!-- Sitemesh -->
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Spring Security -->
+	<filter-mapping>
+		<filter-name>RequestContextFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- End Filter mappings group -->
+
+	<!-- Spring servlet dispatcher -->
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+	<!-- Listeners group -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -52,5 +95,5 @@
 	<listener>
 		<listener-class>net.bykov.listeners.InitContextListener</listener-class>
 	</listener>
-
+	<!-- End Listeners group -->
 </web-app>

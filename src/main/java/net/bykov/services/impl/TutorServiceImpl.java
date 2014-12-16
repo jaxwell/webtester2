@@ -36,7 +36,8 @@ public class TutorServiceImpl implements TutorService {
     @Transactional(readOnly=false, rollbackFor={InvalidUserInputException.class, RuntimeException.class})
     public Test createTest(CreateTestForm form) throws InvalidUserInputException {
         Test t = entityBuilder.buildTest();
-        // TODO Creates id_tutor
+        // TODO Create add id_tutor
+        // TODO validate null values
         copyByFields(t, form);
         testDao.save(t);
         return t;
