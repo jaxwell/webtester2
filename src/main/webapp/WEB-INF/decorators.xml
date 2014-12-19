@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<decorators defaultdir="/WEB-INF/JSP/templates">
+<decorators defaultdir="/WEB-INF/pages/templates">
+
+    <decorator name="index" page="../index.jsp">
+        <pattern>/</pattern>
+    </decorator>
+
+    <decorator name="signup" page="../signup.jsp">
+        <pattern>/signup</pattern>
+    </decorator>
+
     <decorator name="page" page="page-template.jsp">
         <pattern>/*</pattern>
     </decorator>
+
+    <!--<decorator name="main" page="main-template.jsp">-->
+        <!--<pattern>/myProfile</pattern>-->
+        <!--<pattern>/profileNotFound</pattern>-->
+        <!--<pattern>/profile/*</pattern>-->
+    <!--</decorator>-->
+
+    <!--<decorator name="signup" page="signup.jsp">-->
+        <!--<pattern>/signup</pattern>-->
+    <!--</decorator>-->
 </decorators>

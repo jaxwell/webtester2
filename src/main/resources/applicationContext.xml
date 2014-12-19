@@ -15,7 +15,7 @@
         					http://www.springframework.org/schema/mvc
         					http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
         					http://www.springframework.org/schema/security
-            				http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+            				http://www.springframework.org/schema/security/spring-security-3.2.xsd">
 
     <bean id="config" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -72,8 +72,10 @@
     <context:component-scan base-package="net.bykov.security"/>
 
     <security:http use-expressions="true" auto-config="true" >
-        <security:intercept-url pattern="/login" 				access="permitAll" />
-        <security:intercept-url pattern="/loginFailed" 			access="permitAll" />
+        <security:intercept-url pattern="/" 				    access="permitAll" />
+        <security:intercept-url pattern="/signin" 				access="permitAll" />
+        <security:intercept-url pattern="/signup" 				access="permitAll" />
+        <security:intercept-url pattern="/signinFailed" 		access="permitAll" />
         <security:intercept-url pattern="/error" 				access="permitAll" />
         <security:intercept-url pattern="/resources/**"	 		access="permitAll" />
         <security:intercept-url pattern="/favicon.ico" 			access="permitAll" />
@@ -84,12 +86,12 @@
         <security:intercept-url pattern="/advanced_tutor/**" 	access="hasRole('ADVANCED_TUTOR')" />
         <security:intercept-url pattern="/**" 					access="hasRole('STUDENT')" />
         <security:form-login
-                login-page="/login"
+                login-page="/signin"
                 authentication-failure-url="/loginFailed"
                 default-target-url="/myInfo"
                 login-processing-url="/loginHandler" />
         <security:logout
-                logout-success-url="/login"
+                logout-success-url="/"
                 invalidate-session="true"
                 delete-cookies="JSESSIONID"
                 logout-url="/logout" />

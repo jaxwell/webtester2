@@ -5,7 +5,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<jsp:include page="templates/header.jsp" />
+<%--<jsp:include page="templates/header.jsp" />--%>
 <link href="<c:url value="/resources/css/signin.css" />" rel="stylesheet" />
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -49,4 +49,4 @@
 </div>
 
 <div class="container">
-<jsp:include page="templates/footer.jsp" />
+<%--<jsp:include page="templates/footer.jsp" />--%>
