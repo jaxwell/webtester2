@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<decorators defaultdir="/WEB-INF/pages/templates">
+<decorators defaultdir="/WEB-INF/pages">
 
-    <decorator name="index" page="../index.jsp">
+    <decorator name="index" page="index.jsp">
         <pattern>/</pattern>
     </decorator>
 
-    <decorator name="signup" page="../signup.jsp">
+    <decorator name="signup" page="signup.jsp">
         <pattern>/signup</pattern>
     </decorator>
 
-    <decorator name="page" page="page-template.jsp">
+    <decorator name="page" page="templates/page-template.jsp">
         <pattern>/*</pattern>
+    </decorator>
+
+    <decorator name="users" page="admin/users.jsp">
+        <pattern>/admin/users</pattern>
     </decorator>
 
     <!--<decorator name="main" page="main-template.jsp">-->

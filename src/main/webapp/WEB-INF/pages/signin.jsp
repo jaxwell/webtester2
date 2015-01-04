@@ -25,25 +25,50 @@
 
 <div class="jumbotron">
     <div class="container">
-        <form:form method="post" action="${context}/signin" commandName="loginForm" class="form-signin" role="form">
-        <%--<form class="form-signin" role="form">--%>
+        <%-- Old Form (Without Spring Security) --%>
+        <%--<form:form method="post" action="${context}/signin" commandName="loginForm" class="form-signin" role="form">--%>
+        <%--&lt;%&ndash;<form class="form-signin" role="form">&ndash;%&gt;--%>
+            <%--<h2 class="form-signin-heading">Please sign in</h2>--%>
+            <%--<div class="alert alert-danger" role="alert"><form:errors path="*"/></div>--%>
+            <%--&lt;%&ndash;<input type="text" class="form-control" placeholder="Login" required autofocus>&ndash;%&gt;--%>
+            <%--<form:input path="login" class="form-control" placeholder="Login" required="true" autofocus="true" />--%>
+            <%--&lt;%&ndash;<input type="password" class="form-control" placeholder="Password" required>&ndash;%&gt;--%>
+            <%--<form:password path="password" class="form-control" placeholder="Password" required="true" />--%>
+
+            <%--<div class="checkbox">--%>
+                <%--<label>--%>
+                    <%--<input type="checkbox" value="remember-me"> Remember me (temp. inactive)--%>
+                <%--</label>--%>
+            <%--</div>--%>
+            <%--<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>--%>
+            <%--<a class="btn btn-xs btn-link nav-justified">Restore password</a>--%>
+            <%--<a class="btn btn-xs btn-link nav-justified" href="/signup">Not Account Yet? Sign Up today.</a>--%>
+        <%--&lt;%&ndash;</form>&ndash;%&gt;--%>
+        <%--</form:form>--%>
+
+        <%-- Login form (Spring Security) --%>
+        <form method="post" action="${context}/loginHandler" class="form-signin" role="form">
+
             <h2 class="form-signin-heading">Please sign in</h2>
-            <div class="alert alert-danger" role="alert"><form:errors path="*"/></div>
-            <%--<input type="text" class="form-control" placeholder="Login" required autofocus>--%>
-            <form:input path="login" class="form-control" placeholder="Login" required="true" autofocus="true" />
-            <%--<input type="password" class="form-control" placeholder="Password" required>--%>
-            <form:password path="password" class="form-control" placeholder="Password" required="true" />
+
+            <c:if test="${sessionScope.SPRING_SECURITY_LAST_EXCEPTION != null }">
+                <div class="alert alert-danger" role="alert">${sessionScope.SPRING_SECURITY_LAST_EXCEPTION.message}</div>
+            </c:if>
+
+            <input type="text" class="form-control" placeholder="Login" name="j_username" required autofocus />
+
+            <input type="password" class="form-control" placeholder="Password" name="j_password" required>
 
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" value="remember-me"> Remember me (temp. inactive)
+                    <input type="checkbox" value="true" name="_spring_security_remember_me"> Remember me
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <a class="btn btn-xs btn-link nav-justified">Restore password</a>
             <a class="btn btn-xs btn-link nav-justified" href="/signup">Not Account Yet? Sign Up today.</a>
-        <%--</form>--%>
-        </form:form>
+
+        </form>
     </div>
     <!-- /container -->
 </div>

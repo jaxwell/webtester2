@@ -72,22 +72,22 @@
     <context:component-scan base-package="net.bykov.security"/>
 
     <security:http use-expressions="true" auto-config="true" >
-        <security:intercept-url pattern="/" 				    access="permitAll" />
-        <security:intercept-url pattern="/signin" 				access="permitAll" />
-        <security:intercept-url pattern="/signup" 				access="permitAll" />
-        <security:intercept-url pattern="/signinFailed" 		access="permitAll" />
-        <security:intercept-url pattern="/error" 				access="permitAll" />
-        <security:intercept-url pattern="/resources/**"	 		access="permitAll" />
-        <security:intercept-url pattern="/favicon.ico" 			access="permitAll" />
-        <security:intercept-url pattern="/index.jsp" 			access="permitAll" />
-        <security:intercept-url pattern="/myInfo" 				access="hasAnyRole('ADMIN','TUTOR','ADVANCED_TUTOR','STUDENT')" />
+        <security:intercept-url pattern="/**" 				    access="permitAll" />
+        <!--<security:intercept-url pattern="/signin" 				access="permitAll" />-->
+        <!--<security:intercept-url pattern="/signup" 				access="permitAll" />-->
+        <!--<security:intercept-url pattern="/signin" 		access="permitAll" />-->
+        <!--<security:intercept-url pattern="/error" 				access="permitAll" />-->
+        <!--<security:intercept-url pattern="/resources/**"	 		access="permitAll" />-->
+        <!--<security:intercept-url pattern="/favicon.ico" 			access="permitAll" />-->
+        <!--<security:intercept-url pattern="/index.jsp" 			access="permitAll" />-->
+        <!--<security:intercept-url pattern="/myInfo" 				access="hasAnyRole('ADMIN','TUTOR','ADVANCED_TUTOR','STUDENT')" />-->
         <security:intercept-url pattern="/admin/**" 			access="hasRole('ADMIN')" />
-        <security:intercept-url pattern="/tutor/**" 			access="hasRole('TUTOR')" />
-        <security:intercept-url pattern="/advanced_tutor/**" 	access="hasRole('ADVANCED_TUTOR')" />
-        <security:intercept-url pattern="/**" 					access="hasRole('STUDENT')" />
+        <!--<security:intercept-url pattern="/tutor/**" 			access="hasRole('TUTOR')" />-->
+        <!--<security:intercept-url pattern="/advanced_tutor/**" 	access="hasRole('ADVANCED_TUTOR')" />-->
+        <!--<security:intercept-url pattern="/**" 					access="hasRole('STUDENT')" />-->
         <security:form-login
                 login-page="/signin"
-                authentication-failure-url="/loginFailed"
+                authentication-failure-url="/signin"
                 default-target-url="/myInfo"
                 login-processing-url="/loginHandler" />
         <security:logout
@@ -95,10 +95,10 @@
                 invalidate-session="true"
                 delete-cookies="JSESSIONID"
                 logout-url="/logout" />
-        <security:remember-me key="testOnlineKey" token-repository-ref="tokenRepository" />
+        <!--<security:remember-me key="testOnlineKey" token-repository-ref="tokenRepository" />-->
 
         <security:session-management session-fixation-protection="migrateSession"
-                                     invalid-session-url="/invalidSession">
+                                     invalid-session-url="/signin">
             <security:concurrency-control
                     max-sessions="1"
                     expired-url="/sessionExpired" />
@@ -123,7 +123,7 @@
         <security:authentication-provider ref="customAuthenticationProvider" />
     </security:authentication-manager>
 
-    <bean id="tokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">
-        <property name="dataSource" ref="dataSource" />
-    </bean>
+    <!--<bean id="tokenRepository" class="org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl">-->
+        <!--<property name="dataSource" ref="dataSource" />-->
+    <!--</bean>-->
 </beans>

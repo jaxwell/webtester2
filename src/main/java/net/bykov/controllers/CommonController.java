@@ -5,6 +5,8 @@ import net.bykov.entities.User;
 import net.bykov.exceptions.InvalidUserInputException;
 import net.bykov.forms.LoginForm;
 import net.bykov.forms.SignupForm;
+import net.bykov.security.CurrentAccount;
+import net.bykov.security.SecurityUtils;
 import net.bykov.services.CommonService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,31 +70,37 @@ public class CommonController extends AbstractController implements Initializing
         return "index";
     }
 
-    @RequestMapping(value="/signin", method= RequestMethod.GET)
+    @RequestMapping(value={"/signin", "singinFailed"},  method= RequestMethod.GET)
     public String showLogin(Model model){
         model.addAttribute("loginForm", new LoginForm());
 //        initRoles(model);
         return "signin";
     }
 
-    @RequestMapping(value="/signin", method=RequestMethod.POST)
-    public String login(@Validated @ModelAttribute("loginForm") LoginForm loginForm, BindingResult result,
-                        Model model, HttpSession session){
-        try {
-            if(result.hasErrors()) {
-//                initRoles(model);
-                return "signin";
-            }
-            User a = commonService.login(loginForm.getLogin(), loginForm.getPassword());
-            session.setAttribute("CURRENT_ACCOUNT", a);
-//            return "redirect:student"+redirects.get(loginForm.getIdRole());
-            return "redirect:/admin/users";
-        } catch (InvalidUserInputException e) {
-            result.addError(new ObjectError("", e.getMessage()));
-//            initRoles(model);
-            return "signin";
-        }
+    @RequestMapping(value={"/myInfo"}, method=RequestMethod.GET)
+    public String myInfo(Model model){
+
+        return "redirect:/admin/users";
     }
+
+//    @RequestMapping(value="/signin", method=RequestMethod.POST)
+//    public String login(@Validated @ModelAttribute("loginForm") LoginForm loginForm, BindingResult result,
+//                        Model model, HttpSession session){
+//        try {
+//            if(result.hasErrors()) {
+////                initRoles(model);
+//                return "signin";
+//            }
+//            User a = commonService.login(loginForm.getLogin(), loginForm.getPassword());
+//            session.setAttribute("CURRENT_ACCOUNT", a);
+////            return "redirect:student"+redirects.get(loginForm.getIdRole());
+//            return "redirect:/admin/users";
+//        } catch (InvalidUserInputException e) {
+//            result.addError(new ObjectError("", e.getMessage()));
+////            initRoles(model);
+//            return "signin";
+//        }
+//    }
 
 //    protected void initRoles(Model model){
 //        List<Role> roles = commonService.listAllRoles();

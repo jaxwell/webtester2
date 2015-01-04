@@ -40,13 +40,14 @@ public class CustomAuthentificationProvider extends DaoAuthenticationProvider {
         super.additionalAuthenticationChecks(userDetails, authentication);
         CurrentAccount a = (CurrentAccount) userDetails;
 
-        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        int role = Integer.parseInt(request.getParameter("idRole"));
-        if(!ApplicationConstants.ROLES.contains(role)) {
-            throw new AuthenticationException("Invalid role: "+role){
-                private static final long serialVersionUID = 9141828180466015708L;
-            };
-        }
-        a.setRole(role);
+//        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+//
+//        int role = Integer.parseInt(request.getParameter("idRole"));
+//        if(!ApplicationConstants.ROLES.contains(role)) {
+//            throw new AuthenticationException("Invalid role: "+role){
+//                private static final long serialVersionUID = 9141828180466015708L;
+//            };
+//        }
+//        a.setRoles(role);
     }
 }

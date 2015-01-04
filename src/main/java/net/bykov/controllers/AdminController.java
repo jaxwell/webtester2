@@ -1,6 +1,8 @@
 package net.bykov.controllers;
 
 import net.bykov.entities.User;
+import net.bykov.security.CurrentAccount;
+import net.bykov.security.SecurityUtils;
 import net.bykov.services.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +25,8 @@ public class AdminController extends AbstractController {
     @RequestMapping(value="/users", method= RequestMethod.GET)
     public String home(Model model){
         List<User> users = adminService.listAllUsers();
+//        CurrentAccount currentAccount = SecurityUtils.getCurrentAccount();
+//        model.addAttribute("currentAccount", currentAccount);
         model.addAttribute("users", users);
         return "admin/users";
     }

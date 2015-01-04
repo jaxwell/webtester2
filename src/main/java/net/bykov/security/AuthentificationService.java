@@ -20,16 +20,18 @@ import java.util.*;
 @Service("accountAuthentificationService")
 public class AuthentificationService implements UserDetailsService {
     private static final Map<Integer, String> ROLES = new HashMap<Integer, String>();
+
     static {
         ROLES.put(ApplicationConstants.ADMIN_ROLE, "ADMIN");
         ROLES.put(ApplicationConstants.TUTOR_ROLE, "TUTOR");
         ROLES.put(ApplicationConstants.ADVANCED_TUTOR_ROLE, "ADVANCED_TUTOR");
         ROLES.put(ApplicationConstants.STUDENT_ROLE, "STUDENT");
     }
+
     static Collection<? extends GrantedAuthority> convert(List<UserRole> roles) {
         Collection<SimpleGrantedAuthority> res = new ArrayList<SimpleGrantedAuthority>();
-        for(UserRole ar : roles) {
-            res.add(new SimpleGrantedAuthority(ROLES.get(ar.getRoleByIdRole().getIdRole())));
+        for (UserRole ar : roles) {
+            res.add(new SimpleGrantedAuthority(ROLES.get((int) ar.getRoleByIdRole().getIdRole())));
         }
         return res;
     }
@@ -40,8 +42,8 @@ public class AuthentificationService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User a = userDao.findByLogin(username);
-        if(a == null) {
-            throw new UsernameNotFoundException("Account not found by id="+username);
+        if (a == null) {
+            throw new UsernameNotFoundException("Account not found by id=" + username);
         }
         return new CurrentAccount(a);
     }
