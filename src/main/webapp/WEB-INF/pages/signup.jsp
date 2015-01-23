@@ -86,15 +86,15 @@
                 <div class="alert alert-danger">Important message</div>
             </div> -->
 
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label> <input type="checkbox">I Agree with <a
-                                href="/">policy</a>
-                        </label>
-                    </div>
-                </div>
-            </div>
+            <%--<div class="form-group">--%>
+                <%--<div class="col-sm-offset-2 col-sm-10">--%>
+                    <%--<div class="checkbox">--%>
+                        <%--<label> <input type="checkbox">I Agree with <a--%>
+                                <%--href="/">policy</a>--%>
+                        <%--</label>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
 
             <div class="form-group">
                 <!-- 				Example of disabled button -->

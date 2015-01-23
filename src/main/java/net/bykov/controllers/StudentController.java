@@ -1,8 +1,12 @@
 package net.bykov.controllers;
 
+import net.bykov.entities.Result;
 import net.bykov.entities.Test;
+import net.bykov.security.SecurityUtils;
 import net.bykov.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,10 +37,13 @@ public class StudentController extends AbstractController {
         return "student/tests";
     }
 
-//    @RequestMapping(value = "/statistics", method = RequestMethod.GET)
-//    public String results(Model model, HttpSession session) {
-//        List<Result> results = studentService.listResult(session.getAttribute("id"));
-//        model.addAttribute("statistics", results);
-//        return "student/results";
-//    }
+    @RequestMapping(value = "/results", method = RequestMethod.GET)
+    public String results(Model model) {
+
+        long userId = SecurityUtils.getCurrentIdAccount();
+        List<Result> results = studentService.listResults(userId);
+
+        model.addAttribute("result", results);
+        return "student/results";
+    }
 }

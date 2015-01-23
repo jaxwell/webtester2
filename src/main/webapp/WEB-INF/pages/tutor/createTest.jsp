@@ -3,8 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<jsp:include page="../templates/header.jsp"/>
+<%--<jsp:include page="../templates/header.jsp"/>--%>
 
 <link href="<c:url value="/resources/css/webtester.css" />" rel="stylesheet">
 
@@ -41,38 +42,42 @@
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar">
-        <li><a href="/student/tests">Tests</a></li>
+        <li><a href="${context}/student/tests">Tests</a></li>
         <li><a href="#">Statistics</a></li>
         <li><a href="#">Profile</a></li>
       </ul>
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="/tutor/createTest">Create Test</a></li>
+        <li class="active"><a href="${context}/tutor/createTest">Create Test</a></li>
         <li><a href="">Test Management</a></li>
       </ul>
       <ul class="nav nav-sidebar">
-        <li><a href="/admin/users">User Management</a></li>
+        <li><a href="${context}/admin/users">User Management</a></li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">Create new Test</h1>
 
-      <form class="form-horizontal" role="form">
+      <form:form method="post" action="${context}/tutor/createTest" commandName="createTestForm" cssClass="form-horizontal" role="form">
+      <%--<form class="form-horizontal" role="form">--%>
         <div class="form-group">
-          <label for="inputName" class="col-sm-2 control-label">Test title<sup>*</sup></label>
+          <label for="name" class="col-sm-2 control-label">Test title<sup>*</sup></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputName" placeholder="Test title">
+            <form:input path="name" cssClass="form-control" id="name" placeholder="Test title" />
+            <%--<input type="text" class="form-control" id="inputName" placeholder="Test title">--%>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputDesc" class="col-sm-2 control-label">Description<sup>*</sup></label>
+          <label for="description" class="col-sm-2 control-label">Description<sup>*</sup></label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputDesc" placeholder="Enter Description">
+            <form:input path="description" cssClass="form-control" id="description" placeholder="Enter Description" />
+            <%--<input type="text" class="form-control" id="inputDesc" placeholder="Enter Description">--%>
           </div>
         </div>
         <div class="form-group">
-          <label for="inputTime" class="col-sm-2 control-label">Question time</label>
+          <label for="time" class="col-sm-2 control-label">Question time</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputTime" placeholder="Enter Time per Question (sec). Default: 30 sec" maxlength="4">
+            <form:input path="time" cssClass="form-control" id="time" placeholder="Enter Time per Question (sec). Default: 30 sec" maxlength="4" />
+            <%--<input type="text" class="form-control" id="inputTime" placeholder="Enter Time per Question (sec). Default: 30 sec" maxlength="4">--%>
           </div>
         </div>
         <div class="form-group">
@@ -80,9 +85,10 @@
             <button type="submit" class="btn btn-primary">Create Test</button>
           </div>
         </div>
-      </form>
+      </form:form>
+        <%--</form>--%>
     </div>
   </div>
 </div>
 
-<jsp:include page="../templates/footer.jsp"/>
+<%--<jsp:include page="../templates/footer.jsp"/>--%>

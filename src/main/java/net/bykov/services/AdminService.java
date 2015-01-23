@@ -9,4 +9,12 @@ import java.util.List;
  */
 public interface AdminService {
     List<User> listAllUsers();
+
+    User deleteUser(Long idUser);
+
+    User loadUser(Long idUser);
+
+    User activateUser(Long idUser);
+
+    User deactivateUser(Long idUser);
 }

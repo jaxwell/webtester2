@@ -96,4 +96,10 @@
 		<listener-class>net.bykov.listeners.InitContextListener</listener-class>
 	</listener>
 	<!-- End Listeners group -->
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/pages/error404.jsp</location>
+	</error-page>
+
 </web-app>

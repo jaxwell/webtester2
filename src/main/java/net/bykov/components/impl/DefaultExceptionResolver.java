@@ -27,7 +27,7 @@ public class DefaultExceptionResolver extends AbstractHandlerExceptionResolver {
                 Logger.getLogger(handler.getClass()).error("", ex);
             }
             LOGGER.warn("Unsupported exception: "+ ex.getClass(), ex);
-            return new ModelAndView("redirect:/error?url="+request.getRequestURI());
+            return new ModelAndView("redirect:/error404?url="+request.getRequestURI());
         } catch (Exception e) {
             LOGGER.error("Can't send error", e);
             return new ModelAndView();

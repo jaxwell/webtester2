@@ -29,6 +29,7 @@ public class EntityBuilderImpl implements EntityBuilder {
     public Test buildTest() {
         Test t = new Test();
         t.setCreated(new Timestamp(System.currentTimeMillis()));
+        t.setActive(false);
         return t;
     }
 }

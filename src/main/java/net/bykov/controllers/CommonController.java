@@ -18,10 +18,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
@@ -125,12 +122,17 @@ public class CommonController extends AbstractController implements Initializing
             User a = commonService.signUp(signupForm);
 //            session.setAttribute("CURRENT_ACCOUNT", a);
 //            return "redirect:student"+redirects.get(loginForm.getIdRole());
-            return "student/tests";
+            return "signin";
         } catch (InvalidUserInputException e) {
             result.addError(new ObjectError("", e.getMessage()));
 //            initRoles(model);
             return "signup";
         }
     }
+
+//    @ExceptionHandler(ResourceNotFoundException.class)
+//    public String handleResourceNotFoundException() {
+//        return "notFound";
+//    }
 
 }

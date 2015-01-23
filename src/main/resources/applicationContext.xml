@@ -30,8 +30,8 @@
     <context:component-scan base-package="net.bykov.services.impl" />
     <context:component-scan base-package="net.bykov.controllers" />
 
-    <mvc:resources mapping="/resources/**" location="/resources/**" />
-    <mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
+    <mvc:resources mapping="/resources/**" location="/resources/" />
+    <!--<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />-->
 
     <mvc:annotation-driven />
 
@@ -73,13 +73,14 @@
 
     <security:http use-expressions="true" auto-config="true" >
         <security:intercept-url pattern="/**" 				    access="permitAll" />
-        <!--<security:intercept-url pattern="/signin" 				access="permitAll" />-->
-        <!--<security:intercept-url pattern="/signup" 				access="permitAll" />-->
+        <security:intercept-url pattern="/signin" 				access="permitAll" />
+        <security:intercept-url pattern="/signup" 				access="permitAll" />
         <!--<security:intercept-url pattern="/signin" 		access="permitAll" />-->
         <!--<security:intercept-url pattern="/error" 				access="permitAll" />-->
-        <!--<security:intercept-url pattern="/resources/**"	 		access="permitAll" />-->
-        <!--<security:intercept-url pattern="/favicon.ico" 			access="permitAll" />-->
-        <!--<security:intercept-url pattern="/index.jsp" 			access="permitAll" />-->
+        <security:intercept-url pattern="/resources/**"	 		access="permitAll" />
+        <security:intercept-url pattern="/favicon.ico" 			access="permitAll" />
+        <security:intercept-url pattern="/index.jsp" 			access="permitAll" />
+        <!--<security:intercept-url pattern="/notfound.jsp" 			access="permitAll" />-->
         <!--<security:intercept-url pattern="/myInfo" 				access="hasAnyRole('ADMIN','TUTOR','ADVANCED_TUTOR','STUDENT')" />-->
         <security:intercept-url pattern="/admin/**" 			access="hasRole('ADMIN')" />
         <!--<security:intercept-url pattern="/tutor/**" 			access="hasRole('TUTOR')" />-->
@@ -91,7 +92,7 @@
                 default-target-url="/myInfo"
                 login-processing-url="/loginHandler" />
         <security:logout
-                logout-success-url="/"
+                logout-success-url="/signin"
                 invalidate-session="true"
                 delete-cookies="JSESSIONID"
                 logout-url="/logout" />

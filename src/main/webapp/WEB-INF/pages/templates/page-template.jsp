@@ -13,22 +13,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="<c:url value="/resources/favicon.ico"/>" />
+  <link rel="icon" href="${context}/resources/favicon.ico"/>
 
   <title>Webtester</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet" />
+  <link href="${context}/resources/css/bootstrap.min.css" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="<c:url value="/resources/css/starter-template.css" />" rel="stylesheet" />
-  <link href="<c:url value="/resources/css/webtester.css" />" rel="stylesheet">
+  <link href="${context}/resources/css/starter-template.css" rel="stylesheet" />
+  <link href="${context}/resources/css/webtester.css" rel="stylesheet">
 
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
-  <script src="<c:url value="/resources/js/html5shiv.min.js" />" />
-  <script src="<c:url value="/resources/js/respond.min.js" />" />
+  <script src="${context}/resources/js/html5shiv.min.js" />
+  <script src="${context}/resources/js/respond.min.js" />
   <![endif]-->
 </head>
 
@@ -46,7 +46,8 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="<c:url value="/resources/js/jquery.min.js" />" ></script>
-<script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script src="${context}/resources/js/jquery-1.10.2.js"></script>
+<script src="${context}/resources/js/bootstrap.min.js"></script>
+<script src="${context}/resources/js/actions.js"></script>
 </body>
 </html>

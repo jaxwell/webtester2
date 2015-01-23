@@ -6,7 +6,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <%--<jsp:include page="templates/header.jsp" />--%>
-<link href="<c:url value="/resources/css/signin.css" />" rel="stylesheet" />
+<link href="${context}/resources/css/signin.css" rel="stylesheet" />
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
@@ -59,11 +59,11 @@
 
             <input type="password" class="form-control" placeholder="Password" name="j_password" required>
 
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="true" name="_spring_security_remember_me"> Remember me
-                </label>
-            </div>
+            <%--<div class="checkbox">--%>
+                <%--<label>--%>
+                    <%--<input type="checkbox" value="true" name="_spring_security_remember_me"> Remember me--%>
+                <%--</label>--%>
+            <%--</div>--%>
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
             <a class="btn btn-xs btn-link nav-justified">Restore password</a>
             <a class="btn btn-xs btn-link nav-justified" href="/signup">Not Account Yet? Sign Up today.</a>

@@ -5,9 +5,9 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
-<jsp:include page="../templates/header.jsp" />
+<%--<jsp:include page="../templates/header.jsp" />--%>
 
-<link href="<c:url value="/resources/css/webtester.css" />" rel="stylesheet">
+<%--<link href="${context}/resources/css/webtester.css" rel="stylesheet">--%>
 
 <jsp:include page="../templates/top_menu.jsp" />
 
@@ -49,9 +49,16 @@
 								<td>${row.email}</td>
 								<td>${row.name}</td>
 								<td><small>${row.created}</small></td>
-								<td><button type="button" class="btn btn-primary btn-xs">Edit</button></td>
-								<td>${row.active ? "<button type=\"button\" class=\"btn btn-warning btn-xs\">Deactivate</button>" : "<button type=\"button\" class=\"btn btn-success btn-xs\">Activate</button>"}
-								<td><button type="button" class="btn btn-danger btn-xs">Delete</button></td>
+								<td><button type="button" class="btn btn-primary btn-xs" id="edit${row.id}">Edit</button></td>
+								<td>
+								<c:if test="${row.active}">
+									<button type="button" class="btn btn-warning btn-xs" id="deactivate${row.id}">Deactivate</button>
+								</c:if>
+								<c:if test="${!row.active}">
+									<button type="button" class="btn btn-success btn-xs" id="activate${row.id}">Activate</button>
+								</c:if>
+								<%--${row.active ? "<button type=\"button\" class=\"btn btn-warning btn-xs\" id=\"deactivate" + ${row.id} + "\"\">Deactivate</button>" : "<button type=\"button\" class=\"btn btn-success btn-xs\" id=\"activate" + ${row.id} + \"\">Activate</button>"}--%>
+								<td><button type="button" class="btn btn-danger btn-xs" id="delete${row.id}">Delete</button></td>
 								<td><small>${row.updated}</small></td>
 							</tr>
 						</c:forEach>
@@ -61,5 +68,3 @@
 		</div>
 	</div>
 </div>
-
-<jsp:include page="../templates/footer.jsp" />

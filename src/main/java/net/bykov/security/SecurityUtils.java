@@ -8,7 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 /**
  * Created by Ievgen on 12/16/2014.
  */
-public class SecurityUtils{
+public class SecurityUtils {
 
     public static long getCurrentIdAccount () {
         CurrentAccount a = getCurrentAccount();

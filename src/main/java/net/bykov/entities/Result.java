@@ -19,7 +19,12 @@ public class Result extends AbstractEntity implements Serializable {
     @Column(name = "id_result", unique = true, nullable = false)
     private long idResult;
 
+//    @Basic
+//    @Column(name = "id_student")
 //    private long idStudent;
+//
+//    @Basic
+//    @Column(name = "id_test")
 //    private Long idTest;
 
     @Basic
@@ -53,8 +58,6 @@ public class Result extends AbstractEntity implements Serializable {
         this.idResult = idResult;
     }
 
-//    @Basic
-//    @Column(name = "id_student", insertable = false, updatable = false)
 //    public long getIdStudent() {
 //        return idStudent;
 //    }
@@ -63,8 +66,6 @@ public class Result extends AbstractEntity implements Serializable {
 //        this.idStudent = idStudent;
 //    }
 //
-//    @Basic
-//    @Column(name = "id_test", insertable = false, updatable = false)
 //    public Long getIdTest() {
 //        return idTest;
 //    }

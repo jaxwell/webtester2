@@ -43,7 +43,7 @@ public class Test extends AbstractMainEntity implements Serializable {
     private List<Result> resultsByIdTest;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_tutor", referencedColumnName = "id_user", nullable = false)
+    @JoinColumn(name = "id_tutor", referencedColumnName = "id_user")
     private User userByIdTutor;
 
     public Test() {

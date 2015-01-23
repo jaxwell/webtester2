@@ -13,9 +13,13 @@
         <pattern>/*</pattern>
     </decorator>
 
-    <decorator name="users" page="admin/users.jsp">
-        <pattern>/admin/users</pattern>
-    </decorator>
+    <!--<decorator name="users" page="admin/users.jsp">-->
+        <!--<pattern>/admin/users</pattern>-->
+    <!--</decorator>-->
+
+    <!--<decorator name="tests" page="student/tests.jsp">-->
+        <!--<pattern>/student/tests</pattern>-->
+    <!--</decorator>-->
 
     <!--<decorator name="main" page="main-template.jsp">-->
         <!--<pattern>/myProfile</pattern>-->

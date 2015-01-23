@@ -5,6 +5,7 @@ import net.bykov.entities.User;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -28,4 +29,20 @@ public class UserDaoImpl extends AbstractEntityDao<User> implements UserDao {
     public User findByLogin(final String login) {
         return (User) getSession().createCriteria(getEntityClass()).add(Restrictions.eq("login", login)).uniqueResult();
     }
+
+    @Override
+    public User activate(User user) {
+        user.setActive(true);
+        user.setUpdated(new Timestamp(System.currentTimeMillis()));
+        return user;
+    }
+
+    @Override
+    public User deactivate(User user) {
+        user.setActive(false);
+        user.setUpdated(new Timestamp(System.currentTimeMillis()));
+        return user;
+    }
+
+
 }
