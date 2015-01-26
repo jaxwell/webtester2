@@ -135,4 +135,9 @@ public class CommonController extends AbstractController implements Initializing
 //        return "notFound";
 //    }
 
+
+    @RequestMapping(value = "/404", method = RequestMethod.GET)
+    public String errorPage() {
+        return "404";
+    }
 }

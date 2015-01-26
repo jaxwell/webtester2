@@ -22,4 +22,8 @@ $(document).ready(function () {
         window.location.href = "/admin/deactivate/" + this.id.replace("deactivate", "");
     });
 
+    // Events for "Start" buttons
+    $("button[id ^= 'start']").click(function () {
+        window.location.href = "/student/start/" + this.id.replace("start", "");
+    });
 });

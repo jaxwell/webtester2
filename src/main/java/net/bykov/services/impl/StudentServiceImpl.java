@@ -2,8 +2,9 @@ package net.bykov.services.impl;
 
 import net.bykov.dao.ResultDao;
 import net.bykov.dao.TestDao;
-import net.bykov.entities.Test;
 import net.bykov.entities.Result;
+import net.bykov.entities.Test;
+import net.bykov.exceptions.InvalidUserInputException;
 import net.bykov.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +32,15 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Result> listResults(long id_student) {
         return resultDao.listUserResults(id_student);
+    }
+
+    @Override
+    public Test startTest(Long testId) throws InvalidUserInputException {
+        Test t = testDao.findById(testId);
+
+        if (t == null)
+                throw new InvalidUserInputException("InvalidTest");
+
+        return t;
     }
 }

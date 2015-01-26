@@ -4,6 +4,7 @@ import net.bykov.dao.TestDao;
 import net.bykov.entities.Test;
 import net.bykov.entities.User;
 import org.hibernate.criterion.Restrictions;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +14,9 @@ import java.util.List;
  */
 @Repository("hibernateTestDao")
 public class TestDaoImpl extends AbstractEntityDao<Test> implements TestDao {
+
+    @Autowired
+
 
     @Override
     protected Class<Test> getEntityClass() {

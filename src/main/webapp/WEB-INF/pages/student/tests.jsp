@@ -36,7 +36,7 @@
                             <td>${row.description}</td>
                             <td>${row.time}</td>
                             <td>${row.userByIdTutor.name}</td>
-                            <td><button type="button" class="btn btn-success btn-xs">Start Test</button></td>
+                            <td><button type="button" class="btn btn-success btn-xs" id="start${row.id}">Start Test</button></td>
                         </tr>
                     </c:forEach>
 

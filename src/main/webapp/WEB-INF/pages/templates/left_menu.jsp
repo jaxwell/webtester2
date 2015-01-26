@@ -27,7 +27,7 @@
 
     <sec:authorize access="hasRole('ADMIN')">
         <ul class="nav nav-sidebar">
-            <li class="active"><a href="${context}/admin/users">User Management</a></li>
+            <li><a href="${context}/admin/users">User Management</a></li>
         </ul>
     </sec:authorize>
 </div>

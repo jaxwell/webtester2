@@ -13,4 +13,5 @@ public class QuestionDaoImpl extends AbstractEntityDao<Question> implements Ques
     protected Class<Question> getEntityClass() {
         return Question.class;
     }
+
 }

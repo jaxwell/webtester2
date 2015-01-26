@@ -9,4 +9,5 @@ public interface TestDao  extends IEntityDao<Test>{
     List<Test> listAllActiveTests();
 
     List<Test> findByTutor(User user);
+
 }
