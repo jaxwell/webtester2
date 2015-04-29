@@ -49,5 +49,6 @@
 <script src="${context}/resources/js/jquery-1.10.2.js"></script>
 <script src="${context}/resources/js/bootstrap.min.js"></script>
 <script src="${context}/resources/js/actions.js"></script>
+<script src="${context}/resources/js/timer.js"></script>
 </body>
 </html>

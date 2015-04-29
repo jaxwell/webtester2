@@ -21,15 +21,15 @@
         </div>
       </div>
 
-      <h2 class="page-header">Timer: <c:out value="${sessionScope.get('questionTime')}"/> seconds</h2>
+      <h2 class="page-header">Timer: <span  id="timer"><c:out value="${sessionScope.get('questionTime')}"/></span>  seconds</h2>
 
 
       <h3>Question #<c:out value="${sessionScope.get('currentQuestion')}" /> (of total <c:out value="${sessionScope.get('totalQuestions')}" />)</h3>
 
       <c:if test="${!isLastAnswer}">
-      <form action="${context}/student/exam" method="post"></c:if>
+      <form action="${context}/student/exam" method="post" id="questionForm"></c:if>
         <c:if test="${isLastAnswer}">
-        <form action="${context}/student/final" method="post"></c:if>
+        <form action="${context}/student/final" method="post" id="questionForm"></c:if>
 
         <blockquote>
           <c:out value="${question.question}" />

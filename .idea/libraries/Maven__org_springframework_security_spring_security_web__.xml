@@ -1,8 +1,6 @@
 <component name="libraryTable">
   <library name="Maven: org.springframework.security:spring-security-web:$">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/$/spring-security-web-$.jar!/" />
-    </CLASSES>
+    <CLASSES />
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/$/spring-security-web-$-javadoc.jar!/" />
     </JAVADOC>
